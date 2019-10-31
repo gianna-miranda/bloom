@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import "./App.css";
+
+import Navbar from "./components/navbar.component"
 
 function App() {
-  const getMentor = () =>{
-    fetch('/test')
-      .then(res => res.json())
-      .then(res => console.table(res))
-      .catch(err => console.log(err))
-  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p onClick={ () => getMentor() }>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a>
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <div className="container">
+      <Route path="/"  />
+      <Route path="/"/>
+      <Route path="/" />
+      <Route path="/" />
+      </div>
+    </Router>
   );
 }
 
