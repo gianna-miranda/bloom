@@ -42,7 +42,6 @@ app.get("/test", (req, res) => {
     Mentor.find({}, (err, doc) =>{
         if(err){ console.error(err)}
         else{
-            console.table(doc)
             res.send(doc)
         }
     })
