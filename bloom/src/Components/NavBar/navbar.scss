@@ -1,6 +1,8 @@
+@import '../cssUtils.scss';
+
 nav{
-    background: purple;
-    color: orangered;
+    background: $primary;
+    color: $secondary;
     display: flex;
     justify-content: space-between;
     header{
