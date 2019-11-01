@@ -1,0 +1,28 @@
+@import '../../Components/cssUtils.scss';
+
+#hero{
+    .img-container{
+        background-image: url("https://media.istockphoto.com/photos/portrait-of-high-school-students-with-teacher-on-campus-picture-id499113171?k=6&m=499113171&s=612x612&w=0&h=fNTPjIVZwpt6TuhdfCVX7u2FTixSzYnXRigEfbZNsnQ=");
+        height: 100vh;
+        width: 100vw;
+        background: {
+            repeat: no-repeat;
+            position: center;
+            size: cover;
+        }
+        position: relative;
+        &-inner{
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+            width: 50%;
+            font-size: 4em;
+            color: $secondary;
+            height: 7em;
+            background-color: $primary;
+            
+        }
+    }
+}
