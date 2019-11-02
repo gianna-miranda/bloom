@@ -1,4 +1,7 @@
 import React from 'react'
+import { 
+    FaAngleDown,
+} from 'react-icons/fa'
 
 const Hero = () =>{
     return(

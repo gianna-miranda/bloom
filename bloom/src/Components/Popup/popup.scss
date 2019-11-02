@@ -2,15 +2,14 @@
 
 .Popup{
     display: block;
-    width: 23rem;
-    height: 95vh;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
     border: 1px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid $secondary;
-    border-radius: 4%;
     background-color: $primary;
     color: $secondary;
     &_exit{
@@ -75,23 +74,50 @@
     }
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 505px){
     .Popup{
-        display: block;
         width: 29rem;
         height: 29rem;
-        position: fixed;
-        border: 1px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 2px solid $secondary;
         border-radius: 4%;
-        background-color: $primary;
-        color: $secondary;
+        font-size: 1em;
         &_exit{
+            color: black;
+            border-radius: 100%;
+            width: 20px;
+            height: 20px;
+        }
+        label{
+            font-size: 2em;
+        }
+        &-type{
             text-align: center;
-            background-color: $secondary;
+        }
+        #form{
+            &-signup{
+                margin: 0 4em;
+                padding: 0 3em;
+                margin-top: 2em;
+                .submit{
+                    padding: 1em 1em;
+                    &-bttn{
+                        width: 4em;
+    height: 1.5em;
+    background: orangered;
+    font-size: 2.5em;
+    line-height: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px){
+    .Popup{
+        width: 29rem;
+        height: 29rem;
+        border-radius: 4%;
+        &_exit{
             color: black;
             border-radius: 100%;
             width: 20px;
@@ -105,47 +131,6 @@
             &-signup{
                 margin: 0 4em;
                 padding: 0 3em;
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                .input{
-                    padding: 0 1em;
-                    text-align: center;
-                    height: 2em;
-                    margin-bottom: 1em;
-                    border: {
-                        bottom-left-radius: 6% 56%;
-                        top-left-radius: 6% 56%;
-                        bottom-right-radius: 6% 56%;
-                        top-right-radius: 6% 56%;
-                    }
-                }
-                .buttons{
-                    display: flex;
-                    justify-content: space-around;
-                    &-bttn{
-                        line-height: 2em;
-                        height: 2em;
-                        width: 6em;
-                        background-color: black;
-                        color: white;
-                    }
-                    .active{
-                        background-color: $secondary;
-                        color: $primary;
-                    }
-                    .inactive{
-                        background-color: $primary;
-                        color: $secondary;
-                    }
-                }
-                .submit{
-                    padding: 1em 1em;
-                    &-bttn{
-                        width: 10em;
-                        height: 10em;
-                    }
-                }
             }
         }
     }

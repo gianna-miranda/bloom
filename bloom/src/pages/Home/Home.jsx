@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import  UseForm  from '../../Components/useForm'
 import validator from '../../Components/validate'
 import Hero from './Hero'
+import Sponsors from './Sponsors'
 import Popup from '../../Components/Popup/Popup'
 import './home.scss'
 
@@ -10,7 +11,7 @@ const Home = () =>{
     const [ users, setUsers ] = useState([])
     const [ bloomer, setBloomer ] = useState(false)
     const [ mentor, setMentor ] = useState(false)
-    const [ popup, setPopup ] = useState(true)
+    const [ popup, setPopup ] = useState(false)
     const signUp = () =>{
         console.log("submit was successful")
     }
@@ -39,6 +40,7 @@ const Home = () =>{
     return(
         <div>
             <Hero />
+            <Sponsors />
             <Popup isOn={ popup } clicked={ () => setPopup(!popup) } header="Sign Up">
                 <form id="form-signup" onSubmit={ handleSubmit } noValidate>
                     <label htmlFor="Name">First Name:</label>
