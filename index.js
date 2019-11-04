@@ -34,19 +34,11 @@ client = mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUni
 ///   api end points //
 //////////////////////
 
-MentorSchema = new mongoose.Schema({ name: String })
+const mentorRouter = require('./routes/mentor')
 
-// serve the hpme page
-app.get("/test", (req, res) => {
-    const Mentor = mongoose.model('mentors', MentorSchema);
-    Mentor.find({}, (err, doc) =>{
-        if(err){ console.error(err)}
-        else{
-            res.send(doc)
-        }
-    })
-    // res.sendFile(path.join(__dirname + "./public/index.html"));
-});
+app.use('/mentor', mentorRouter)
+
+
 
 
 

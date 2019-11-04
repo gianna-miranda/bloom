@@ -11,7 +11,12 @@ export default function validation(values){
     if(!values.email){
         errors.email = "Please enter your email"
     } else if(!validate.isEmail(values.email)){
-        errors.email = "email entered was invalid"
+        errors.email = "Email entered was invalid"
+    }
+    if(!values.phoneNumber){
+        errors.phoneNumber = "Please provide a number we can contact"
+    } else if(!(/^\d+$/.test(values.phoneNumber))){
+        errors.phoneNumber = "Phone number was invalid"
     }
     return errors
 }
