@@ -35,11 +35,14 @@ const Home = () =>{
     const signUp = () =>{
         setIsSignUp(true)
         if(isMentor === "active"){
-            values.tags = tags
-            console.log(values)
+            values.tag = tags
             axios.post('/mentor/add', values)
+            setPopupSignUp(false)
+            alert("We will being contact you soon to find out if you are eligible for to be a mentor.")
         } else if(isBloomer === "active"){
-
+            values.tag = tags
+            axios.post('/student/add', values)
+            setPopupSignUp(false)
         } else{
             console.log("Are you a Mentor or Bloomer")
         }
@@ -56,6 +59,9 @@ const Home = () =>{
     const addTag = () =>{
         setTags([...tags, values.tag])
     }
+
+    const grades = ["9th", "10th", "11th", "12th"]
+    const gpa = [1,2,3,4,5]
 
     const signUpPop = () =>(
         <form id="form-signup" onSubmit={ handleSubmit } noValidate>
@@ -87,13 +93,24 @@ const Home = () =>{
             <input type="text" name="tag" className="input" values={ values.tag } onChange={ handleChange } required/>
             <div className="add-btn" onClick={ () => addTag()}>Add</div>
             <ul>
-                {tags.map(tag => (<li key={tag}>{tag}</li>))}
+                {tags.map((tag, i) => (<li key={tag + i}>{tag}</li>))}
             </ul>
+
             <label htmlFor="choose">Choose:</label>
             <div className="buttons">
                 <div className={`buttons-bttn ${ isMentor }`} onClick={ () => signupType("mentor") }>Mentor</div>
                 <div className={`buttons-bttn ${ isBloomer }`} onClick={ () => signupType("bloomer") }>Bloomer</div>
             </div>
+
+            { isBloomer === "active" && 
+                <>
+                    <label htmlFor="gradelevel">Grade Level</label>
+                    <select name="gradeLevel" value={values.gradeLevel} onChange={ handleChange } required>{grades.map(grade => <option key={grade}>{grade}</option>)}</select>
+                    <label htmlFor="gpa">GPA</label>
+                    <select name="gpa" onChange={ handleChange } required>{gpa.map((gpa) => <option key={gpa}>{gpa}</option>)}</select>
+                </> 
+            }
+
             <div className="submit">
                 <input type="submit" value="Sign Up" className="submit-bttn"/>
             </div>

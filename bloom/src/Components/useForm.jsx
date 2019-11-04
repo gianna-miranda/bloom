@@ -8,13 +8,16 @@ const UseForm = (callback, validate) => {
     password: "", 
     phoneNumber: "",
     description: "",
-    tag: ""
+    tag: "",
+    gradeLevel: "",
+    gpa: Number
   })
 
   const [ errors, setErrors ] = useState({})
   const [ isSubmitting, setIsSubmitting ] = useState(false)
 
   const handleChange = e => {
+    e.preventDefault()
     const { name, value } = e.target
     setValues({
       ...values,
