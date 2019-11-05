@@ -32,7 +32,6 @@ const Home = () =>{
     let isMentor = mentor ? "active" : "inactive"
 
     const signUp = () =>{
-        setIsSignUp(true)
         if(isMentor === "active"){
             values.tag = tags
             axios.post('/mentor/add', values)
@@ -51,14 +50,25 @@ const Home = () =>{
         console.log("login submition")
     }
 
+    let submit = isSignUp ? signUp : login
+
+    const { handleChange, handleSubmit, values, errors } = UseForm(submit, validator)
+
     const addTag = () =>{
         setTags([...tags, values.tag])
     }
 
+    const grades = ["9th", "10th", "11th", "12th"]
+    const gpa = [1,2,3,4,5]
 
-    let submit = isSignUp ? signUp : login
-
-    const { handleChange, handleSubmit, values, errors } = UseForm(submit, validator)
+    const loginPop = () =>(
+        <form>
+            <div>
+                something
+            </div>
+        </form>
+    )
+    console.log(values)
 
     return(
         <div>
@@ -68,27 +78,21 @@ const Home = () =>{
             <SignUp signUp={() => {setPopupSignUp(true); setIsSignUp(true)}} login={() => {setPopupLogin(true); setIsSignUp(false)}}/>
             <Popup isOn={ popupSignUp } clicked={ () => {setPopupSignUp(!popupSignUp)} } header="Sign Up">
                 <SignPopUp
-                    handleChange={handleChange}
+                    handleChange={ handleChange}
                     handleSubmit={handleSubmit}
                     values={values}
                     errors={errors}
                     tags={tags}
                     isBloomer={isBloomer}
                     isMentor={isMentor}
+                    grades={grades}
+                    gpa={gpa}
                     addTag={addTag}
                     signupType={signupType}
                 />
             </Popup>
             <Popup isOn={ popupLogin } clicked={ () => {setPopupLogin(!popupLogin); setIsSignUp(false)} } header="Login">
-                <form id="form-signup" onSubmit={ handleSubmit } noValidate>
-                    <label htmlFor="Name">First Name:</label>
-                    <input type="text" name="firstName" className="input" values={ values.firstName } onChange={ handleChange } required/>
-                    {errors.firstName && <p>{errors.firstName}</p>}
-
-                    <label htmlFor="last name">Last Name:</label>
-                    <input type="text" name="lastName" className="input" values={ values.lastName } onChange={ handleChange } required/>
-                    {errors.lastName && <p>{errors.lastName}</p>}
-                </form>
+                {loginPop()}
             </Popup>
         </div>
     )

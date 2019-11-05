@@ -27,8 +27,9 @@ const UseForm = (callback, validate) => {
 
   const handleSubmit = event =>{
     event.preventDefault()
-    setIsSubmitting(true)
+    console.log(errors)
     setErrors(validate(values))
+    setIsSubmitting(true)
   }
 
   useEffect(() => {
