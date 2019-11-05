@@ -35,8 +35,12 @@ client = mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUni
 //////////////////////
 
 const mentorRouter = require('./routes/mentor')
+const studentRouter = require('./routes/student')
+const loginRouter = require('./routes/login')
 
 app.use('/mentor', mentorRouter)
+app.use('/student', studentRouter)
+app.use('/login', loginRouter)
 
 
 

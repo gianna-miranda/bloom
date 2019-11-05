@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const model = mongoose.model
 const Schema = mongoose.Schema
 
-const mentorSchema = new Schema({
+const studentSchema = new Schema({
     firstName: { type: String, required: true  },
     lastName: { type: String, required: true  },
     password: { type: String, required: true },
@@ -12,10 +12,11 @@ const mentorSchema = new Schema({
     phoneNumber: { type: String, length: 11 },
     qualified: { type: Boolean, default: false},
     description: String,
+    gradeLevel: String,
+    gpa: String,
     tags: [ String ]
 })
 
-const mentorModel = model("Mentor", mentorSchema)
-//add gpa to student
+const studentModel = model("student", studentSchema)
 
-module.exports = mentorModel
+module.exports = studentModel
