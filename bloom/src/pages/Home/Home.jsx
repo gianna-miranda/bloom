@@ -7,7 +7,7 @@ import Sponsors from './Sponsors'
 import Rewards from './Rewards'
 import SignUp from '../../Components/SignUp/SignUp'
 import Popup from '../../Components/Popup/Popup'
-import Signer from '../../Components/Popup/SignUp'
+import SignPopUp from '../../Components/Popup/SignUp'
 import './home.scss'
 
 
@@ -79,7 +79,7 @@ const Home = () =>{
             <Rewards />
             <SignUp signUp={() => {setPopupSignUp(true); setIsSignUp(true)}} login={() => {setPopupLogin(true); setIsSignUp(false)}}/>
             <Popup isOn={ popupSignUp } clicked={ () => {setPopupSignUp(!popupSignUp)} } header="Sign Up">
-                <Signer 
+                <SignPopUp
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
                     values={values}

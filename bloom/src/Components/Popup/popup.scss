@@ -14,6 +14,7 @@
     background-color: $primary;
     color: $secondary;
     &_exit{
+        position: fixed;
         text-align: center;
         background-color: $secondary;
         color: black;
@@ -85,8 +86,6 @@
         border-radius: 4%;
         font-size: 1em;
         &_exit{
-            color: black;
-            border-radius: 100%;
             width: 20px;
             height: 20px;
         }
