@@ -4,6 +4,7 @@ import "./main.scss";
 
 import Navbar from "./Components/NavBar/Navbar"
 import Home from "./pages/Home/Home"
+import Mentor from "./pages/Mentor/Mentor"
 
 
 function App() {
@@ -12,8 +13,8 @@ function App() {
       <Navbar />
       <div className="container">
       <Route path="/" exact component={Home} />
-      {/* <Route path="/"/>
-      <Route path="/" />
+      <Route path="/Mentor" exact component={Mentor}/>
+      {/* <Route path="/" />
       <Route path="/" /> */}
       </div>
     </Router>
