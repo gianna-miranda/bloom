@@ -7,7 +7,7 @@ router.get('/', (req, res) =>{
         if(err){
             console.log("Was not able to retreive all mentors")
         } else {
-            console.log(doc)
+            console.log("mentors retrieved successfully")
             res.send(doc)
         }
     })

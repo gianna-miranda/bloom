@@ -46,6 +46,7 @@ const Rewards = () =>{
         "3em",
         ""
     )
+    const thing = [giftCards,money,tickets]
     return(
         <div id="rewards">
             <div className="header">

@@ -1,47 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Popup from '../../Components/Popup/Popup';
+import Axios from 'axios';
+
 const Mentor = () => {
+    const [ mentors, setMentors ] = useState([])
     const [ popup, setPopup ] = useState(false)
+
+    useEffect(() =>{
+        Axios.get('/mentor/')
+            .then(res => setMentors(res.data))
+            .catch(err => console.error(err))
+    }, [])
+    
     return (
         <main>
-            <h1> Mentor Information:</h1>
-            <div>
-                <p>First Name:</p>
-                <p>Emily</p>
-                {/* <p> {props.firstName}</p> */}
-            </div>
-
-            <div>
-                <p>Last Name:</p>
-                {/* <p> {props.lastName} </p> */}
-            </div>
-            
-            <div>
-                <p>Rating:</p>
-                {/* <p> {props.lastName} </p> */}
-
-            </div>
-
-            <div>
-                <p>Email:</p>
-                {/* <p> {props.lastName} </p> */}
-            </div>
-
-            <div>
-                <p>Phone Number:</p>
-                {/* <p> {props.lastName} </p> */}
-            </div>
-
-            <div>
-                <p>Description:</p>
-                {/* <p> {props.lastName} </p> */}
-            </div>
-            <Popup isOn={true}>
-            <div>
-                <p>Description:</p>
-                {/* <p> {props.lastName} </p> */}
-            </div>
-            </Popup>
             
         </main>
     ); 

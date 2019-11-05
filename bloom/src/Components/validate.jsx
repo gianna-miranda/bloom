@@ -21,5 +21,8 @@ export default function validation(values){
     } else if(!/^\d+$/.test(values.phoneNumber)){
         errors.phoneNumber = "Phone number was invalid"
     }
+    if(!values.userName){
+        errors.userName = "Please enter a userName"
+    }
     return errors
 }
