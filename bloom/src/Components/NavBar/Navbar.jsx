@@ -8,8 +8,8 @@ const Navbar = () =>{
                 <h1>Bloom</h1>
             </header>
             <div className="pages">
-                <p>Home</p>
-                <p>Contact</p>
+                <a href="/"><p>Home</p></a>
+                <a href="/Mentor"><p>Mentors</p></a>
                 <p>About</p>
             </div>
         </nav>
