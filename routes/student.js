@@ -15,16 +15,14 @@ router.get('/', (req, res) =>{
 
 //POST Methods
 router.post('/add', (req, res) =>{
-    // Student.insertMany([req.body], (err, doc) =>{
-    //     if(err){
-    //         console.log("was not able to add new student")
-    //     } else{
-    //         console.log(doc)
-    //     }
-    //     res.end()
-    // })
-    console.log(req.body)
-    res.send(req.body)
+    Student.insertMany([req.body], (err, doc) =>{
+        if(err){
+            console.log("was not able to add new student")
+        } else{
+            console.log(doc)
+        }
+        res.end()
+    })
 })
 
 module.exports = router
