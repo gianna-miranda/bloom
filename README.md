@@ -1,2 +1,2 @@
-# bloom
-##Solving Charlotte's economic mobility crisis
+# Bloom
+## Solving Charlotte's economic mobility crisis
