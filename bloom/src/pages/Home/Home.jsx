@@ -54,13 +54,6 @@ const Home = () =>{
 
     const { handleChange, handleSubmit, values, errors } = UseForm(submit, validator)
 
-    const addTag = () =>{
-        setTags([...tags, values.tag])
-    }
-
-    const grades = ["9th", "10th", "11th", "12th"]
-    const gpa = [1,2,3,4,5]
-
     const loginPop = () =>(
         <form>
             <div>
@@ -68,7 +61,10 @@ const Home = () =>{
             </div>
         </form>
     )
-    console.log(values)
+
+    const addTag = () =>{
+        setTags([...tags, values.tag])
+    }
 
     return(
         <div>
@@ -78,16 +74,14 @@ const Home = () =>{
             <SignUp signUp={() => {setPopupSignUp(true); setIsSignUp(true)}} login={() => {setPopupLogin(true); setIsSignUp(false)}}/>
             <Popup isOn={ popupSignUp } clicked={ () => {setPopupSignUp(!popupSignUp)} } header="Sign Up">
                 <SignPopUp
-                    handleChange={ handleChange}
+                    handleChange={ handleChange }
                     handleSubmit={handleSubmit}
                     values={values}
                     errors={errors}
                     tags={tags}
+                    addTag={addTag}
                     isBloomer={isBloomer}
                     isMentor={isMentor}
-                    grades={grades}
-                    gpa={gpa}
-                    addTag={addTag}
                     signupType={signupType}
                 />
             </Popup>

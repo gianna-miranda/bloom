@@ -9,12 +9,12 @@ const signUpPop = (props) =>{
         tags,
         isBloomer,
         isMentor,
-        grades,
-        gpa,
         addTag,
         signupType
     } = props
 
+    const grades = ["9th", "10th", "11th", "12th"]
+    const gpa = [1,2,3,4,5]
     
     return(
         <form id="form-signup" onSubmit={ handleSubmit } noValidate>
