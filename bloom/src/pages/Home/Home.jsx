@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
 import UseForm  from '../../Components/useForm'
 import validator from '../../Components/validate'
@@ -7,10 +7,8 @@ import Sponsors from './Sponsors'
 import Rewards from './Rewards'
 import SignUp from '../../Components/SignUp/SignUp'
 import Popup from '../../Components/Popup/Popup'
-import Signer from '../../Components/Popup/SignUp'
+import SignPopUp from '../../Components/Popup/SignUp'
 import './home.scss'
-
-
 
 const Home = () =>{
     const [ tags, setTags ] = useState([])
@@ -53,24 +51,14 @@ const Home = () =>{
         console.log("login submition")
     }
 
-    let submit = isSignUp ? signUp : login
-
-    const { handleChange, handleSubmit, values, errors } = UseForm(submit, validator)
-
     const addTag = () =>{
         setTags([...tags, values.tag])
     }
 
-    const grades = ["9th", "10th", "11th", "12th"]
-    const gpa = [1,2,3,4,5]
 
-    const loginPop = () =>(
-        <form>
-            <div>
-                something
-            </div>
-        </form>
-    )
+    let submit = isSignUp ? signUp : login
+
+    const { handleChange, handleSubmit, values, errors } = UseForm(submit, validator)
 
     return(
         <div>
@@ -79,7 +67,7 @@ const Home = () =>{
             <Rewards />
             <SignUp signUp={() => {setPopupSignUp(true); setIsSignUp(true)}} login={() => {setPopupLogin(true); setIsSignUp(false)}}/>
             <Popup isOn={ popupSignUp } clicked={ () => {setPopupSignUp(!popupSignUp)} } header="Sign Up">
-                <Signer 
+                <SignPopUp
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
                     values={values}
@@ -87,14 +75,20 @@ const Home = () =>{
                     tags={tags}
                     isBloomer={isBloomer}
                     isMentor={isMentor}
-                    grades={grades}
-                    gpa={gpa}
                     addTag={addTag}
                     signupType={signupType}
                 />
             </Popup>
             <Popup isOn={ popupLogin } clicked={ () => {setPopupLogin(!popupLogin); setIsSignUp(false)} } header="Login">
-                {loginPop()}
+                <form id="form-signup" onSubmit={ handleSubmit } noValidate>
+                    <label htmlFor="Name">First Name:</label>
+                    <input type="text" name="firstName" className="input" values={ values.firstName } onChange={ handleChange } required/>
+                    {errors.firstName && <p>{errors.firstName}</p>}
+
+                    <label htmlFor="last name">Last Name:</label>
+                    <input type="text" name="lastName" className="input" values={ values.lastName } onChange={ handleChange } required/>
+                    {errors.lastName && <p>{errors.lastName}</p>}
+                </form>
             </Popup>
         </div>
     )
