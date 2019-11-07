@@ -9,3 +9,10 @@
         text-align: center;
     }
 }
+
+.stars{
+    display: flex;
+    &-centered{
+        justify-content: center;
+    }
+}

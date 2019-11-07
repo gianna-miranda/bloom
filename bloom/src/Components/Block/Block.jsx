@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Popup from '../Popup/Popup'
+import Stars from './Stars'
 import './block.scss'
 
 const Block = props =>{
@@ -9,7 +10,8 @@ const Block = props =>{
         firstName,
         lastName,
         description,
-        tags
+        tags,
+        rating
     } = props.group
 
     return(
@@ -20,6 +22,7 @@ const Block = props =>{
                 </div>
                 <div className="block-info">
                     <p>{`${firstName} ${lastName}`}</p>
+                    <Stars count={rating}/>
                 </div>
             </div>
             <Popup isOn={popup} clicked={ () => setPopup(false) } header={`${firstName} ${lastName}`}>
@@ -28,6 +31,7 @@ const Block = props =>{
                     <ul>
                         { tags.map((tag, i) => <li key={i}>{tag}</li>) }
                     </ul>
+                    <Stars count={rating}/>
                 </div>
             </Popup>
         </>

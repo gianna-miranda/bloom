@@ -29,7 +29,9 @@ const Mentor = () => {
                 <h1 className="header-text">Mentors</h1>
             </div>
             <SideBar show={filter} toggle={ () => setFilter(!filter) }/>
-            { mentors.map(mentor => <Block key={mentor._id} group={mentor}/>) }
+            <div id="mentors">
+                { mentors.map(mentor => <Block key={mentor._id} group={mentor}/>) }
+            </div>
         </Swipeable>
     ); 
 };
