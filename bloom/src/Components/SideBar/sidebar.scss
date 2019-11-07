@@ -1,0 +1,45 @@
+@import '../../Components/cssUtils.scss';
+
+.sidebar{
+    position: fixed;
+    text-align: center;
+    width: 85%;
+    background-color: gray;
+    transform: translateY(-21.5%);
+    transition: 1s ease all;
+    &-bttn{
+        position: absolute;
+        display: block;
+        background-color: $primary;
+        height: 2em;
+        width: 30px;
+        top: 0;
+        right: -30px;
+            span{
+                display: block;
+                background-color: $secondary;
+                width: 20px;
+                height: 4px;
+                border-radius: 25%;
+                margin: 5px auto;
+            }
+    }
+}
+
+.inactive{
+    transform: translate(-100%, -21.5%);
+}
+
+.filters{
+    font-size: 24px;
+    &-catagory{
+        border-top: 2px $secondary solid;
+        border-bottom: 2px $secondary solid;
+        font-weight: bold;
+    }
+    &-bttns{
+        p:hover{
+            background-color: $secondary;
+        }
+    }
+}

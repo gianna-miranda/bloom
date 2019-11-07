@@ -5,6 +5,7 @@ import "./main.scss";
 import Navbar from "./Components/NavBar/Navbar"
 import Home from "./pages/Home/Home"
 import Mentor from "./pages/Mentor/Mentor"
+import About from "./pages/AboutUs"
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <div className="container">
       <Route path="/" exact component={Home} />
       <Route path="/Mentor" exact component={Mentor}/>
+      <Route path="/About" exact component={About}/>
       {/* <Route path="/" />
       <Route path="/" /> */}
       </div>

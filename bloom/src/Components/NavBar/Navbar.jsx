@@ -8,9 +8,9 @@ const Navbar = () =>{
                 <h1>Bloom</h1>
             </header>
             <div className="pages">
-                <p>Home</p>
-                <p>Contact</p>
-                <p>About</p>
+                <a href="/"><p>Home</p></a>
+                <a href="/Mentor"><p>Mentors</p></a>
+                <a href="/About"><p>About us</p></a>
             </div>
         </nav>
     )

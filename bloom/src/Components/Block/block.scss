@@ -1,0 +1,11 @@
+@import '../cssUtils.scss';
+
+.block{
+    display: flex;
+    border: 2px $primary solid;
+    padding: .5em; 
+    margin-bottom: 1em;
+    &-Popup{
+        text-align: center;
+    }
+}

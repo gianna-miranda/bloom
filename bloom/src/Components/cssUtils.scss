@@ -7,6 +7,11 @@ body{
     width: 100%;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 $primary: purple;
 $secondary: orangered;
 $accent1: red;
