@@ -11,12 +11,13 @@ const Block = props =>{
         lastName,
         description,
         tags,
-        rating
+        rating,
+        _id
     } = props.group
 
     return(
         <>
-            <div className="block" onClick={ () => setPopup(true) }>
+            <div key={_id} className="block" onClick={ () => setPopup(true) }>
                 <div className="block-pic">
                     <img src="https://icon-icons.com/icons2/1997/PNG/48/account_avatar_people_profile_user_icon_123297.png" alt="profile-pic"/>
                 </div>
