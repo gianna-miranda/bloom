@@ -7,7 +7,7 @@ const mentorSchema = new Schema({
     firstName: { type: String, required: true  },
     lastName: { type: String, required: true  },
     password: { type: String, required: true },
-    rating: { type: Number, default: 5},
+    rating: { type: Number, default: 4},
     email: { type: String, required: true },
     phoneNumber: { type: String, length: 11 },
     qualified: { type: Boolean, default: false},

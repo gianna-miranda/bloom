@@ -8,7 +8,8 @@ const Hero = () =>{
         <div id="hero">
             <div className="img-container">
                 <div className="img-container-inner">
-                    <h1>BLOOMING OUR FUTURE</h1>
+                    <h1 className="title">BLOOM</h1>
+                    <h2 className="subhead"> Meet, Connect, and Learn about Life</h2>
                 </div>
             </div>
         </div>

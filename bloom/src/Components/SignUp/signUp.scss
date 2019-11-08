@@ -7,17 +7,19 @@
     width: 3.5em;
     background-color: $primary;
     color: $secondary;
-    left: 0;
-    top: 10%;
-    border-bottom-right-radius: 49% 96%;
-    border-top-right-radius: 49% 96%;
+    right: 0;
+    top: 7%;
+    border-bottom-left-radius: 49% 96%;
+    border-top-left-radius: 49% 96%;
     padding: 12px 15px;
     padding-right: 0px;
     padding-left: 1em;
+    transition: ease all 1s;
     &:hover{
         background-color: #fff;
         text-decoration: underline;
         cursor: pointer;
+        width: 4em;
     }
 }
 /* loginbtn end */
@@ -30,16 +32,18 @@
     background-color: $primary;
     color: $secondary;
     right: 0;
-    top: 10%;
+    top: 15%;
     border-bottom-left-radius: 49% 96%;
     border-top-left-radius: 49% 96%;
     padding: 12px 15px;
     padding-right: 0px;
     padding-left: 1em;
+    transition: ease all 1s;
     &:hover{
         background-color: #fff;
         text-decoration: underline;
         cursor: pointer;
+        width: 4.5em;
     }
 }
 /* signupbtn end */
@@ -51,7 +55,7 @@
         background-color: $primary;
         color: $secondary;
         right: 0;
-        top: 10%;
+        top: 15%;
         border-bottom-left-radius: 49% 96%;
         border-top-left-radius: 49% 96%;
         padding: 12px 15px;
