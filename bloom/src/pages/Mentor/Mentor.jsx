@@ -12,7 +12,7 @@ const Mentor = () => {
     const [ popup, setPopup ] = useState(false)
 
     useEffect(() =>{
-        Axios.get('/mentor/')
+        Axios.get('/Mentor')
             .then(res => setMentors(res.data))
             .catch(err => console.error(err))
     }, [])
