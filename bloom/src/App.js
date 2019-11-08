@@ -5,7 +5,7 @@ import "./main.scss";
 import Navbar from "./Components/NavBar/Navbar"
 import Home from "./pages/Home/Home"
 import Mentor from "./pages/Mentor/Mentor"
-import About from "./pages/AboutUs"
+import About from "./pages/AboutUs/AboutUs"
 
 
 function App() {
