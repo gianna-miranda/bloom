@@ -1,22 +1,39 @@
 @import '../cssUtils.scss';
 
 nav{
+    text-align: center;
     background: $primary;
     color: $secondary;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     header{
         line-height: 3em;
     }
     .pages{
         display: flex;
+        justify-content: space-between;
         line-height: 3em;
         p{
             margin: 0px;
-            border: {
-                left: 1px black solid;
-            };
+            // border: 1px black solid;
             padding: 0px 10px;
+        }
+    }
+}
+
+@media screen and (min-width: 400px){
+    nav{
+        flex-direction: row;
+    }
+    .pages{
+        p{
+            border: {
+                left: 1px solid black !important;
+                right: 0px solid black !important;
+                bottom: 0px solid black !important;
+                top: 0px solid black !important;
+            }
         }
     }
 }
