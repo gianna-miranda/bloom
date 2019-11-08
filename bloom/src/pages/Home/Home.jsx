@@ -42,7 +42,7 @@ const Home = () =>{
             axios.post('/student/add', values)
             setPopupSignUp(false)
         } else{
-            console.log("Are you a Mentor or Bloomer")
+            console.log("Are you a Mentor or Bloomer?")
         }
     }
     
