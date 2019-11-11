@@ -18,21 +18,14 @@ const Mentor = () => {
             .catch(err => console.error(err))
     }, [])
 
-    const isAlphUpFunc = (which) =>{
-        mentors.sort((a, b) => {
-            return (`${a.firstName}${a.lastName}` > `${b.firstName}${b.lastName}`) ? 1 : -1
-        })
-        which || mentors.reverse()
-    }
+    mentors.sort((a, b) => {// filtering alphabetically
+        return (`${a.firstName}${a.lastName}` > `${b.firstName}${b.lastName}`) ? 1 : -1
+    })
+    filter.alphaAscend || mentors.reverse()
 
-    const isRankUpFunc = (which) =>{
-        mentors.sort((a, b) =>{
-            return which ? a.rating > b.rating : a.rating < b.rating
-        })
-    }
-
-    isAlphUpFunc(filter.alphaAscend)
-    isRankUpFunc(filter.rankAscend)
+    mentors.sort((a, b) =>{// filtering by rating
+        return filter.rankAscend ? a.rating > b.rating : a.rating < b.rating
+    })
     
 
     const filters = { //this will be an object that stores all of the functionality
@@ -45,7 +38,9 @@ const Mentor = () => {
             <div className="Title">
                 <h1 className="Title-text">Mentors</h1>
             </div>
-            <Filter  functions={filters} switch={filter}/>
+            <div id="filter">
+                <Filter  functions={filters} switch={filter}/>
+            </div>
             <div id="mentors">
                 { mentors.map(mentor => <Block key={mentor._id} group={mentor}/>) }
             </div>
