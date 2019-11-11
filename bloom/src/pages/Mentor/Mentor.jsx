@@ -20,18 +20,51 @@ const Mentor = () => {
             .catch(err => console.error(err))
     }, [])
 
+    const alphaAscendFunc = (which, array) =>{
+        array.map(mentor => mentor.name = `${mentor.firstName}${mentor.lastName}`.toLowerCase())
+        array.sort((a, b) => {
+            if (a.name > b.name) {
+                return -1;
+            }
+            if (b.name > a.name) {
+                return 1;
+            }
+            return 0;
+        });
+        return which ? array : array.reverse()
+    }
 
+    const rankAscendFunc = (which, array) =>{
+        array.sort((a, b) => {
+            if (a.rating > b.rating) {
+                return -1
+            }
+            if (b.rating > a.rating) {
+                return 1
+            }
+            return 0;
+        });
+        return which ? array : array.reverse()
+    }
+
+    useEffect(() =>{
+        alphaAscendFunc(filter.alphaAscend, mentors)
+        
+    }, [filter])
+
+    console.log(`alphaAscend: ${filter.alphaAscend}`)
 
     const filters = { //this will be an object that stores all of the functionality
+        isAlphUp: () => setFilter({...filter, alphaAscend: !filter.alphaAscend}),
+        isRankUp: () => setFilter({...filter, rankAscend: !filter.rankAscend})
+    }
 
-    } 
-    
     return (
         <>
-            <div className="header">
-                <h1 className="header-text">Mentors</h1>
+            <div className="Title">
+                <h1 className="Title-text">Mentors</h1>
             </div>
-            <Filter  filter={filters}/>
+            <Filter  functions={filters} switch={filter}/>
             <div id="mentors">
                 { mentors.map(mentor => <Block key={mentor._id} group={mentor}/>) }
             </div>
