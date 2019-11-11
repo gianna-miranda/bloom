@@ -18,37 +18,22 @@ const Mentor = () => {
             .catch(err => console.error(err))
     }, [])
 
-    // const alphaAscendFunc = (which, array) =>{
-    //     array.map(mentor => mentor.name = `${mentor.firstName}${mentor.lastName}`.toLowerCase())
-    //     array.sort((a, b) => {
-    //         if (a.name > b.name) {
-    //             return -1;
-    //         }
-    //         if (b.name > a.name) {
-    //             return 1;
-    //         }
-    //         return 0;
-    //     });
-    //     return which ? array : array.reverse()
-    // }
+    const isAlphUpFunc = (which) =>{
+        mentors.sort((a, b) => {
+            return (`${a.firstName}${a.lastName}` > `${b.firstName}${b.lastName}`) ? 1 : -1
+        })
+        which || mentors.reverse()
+    }
 
-    // const rankAscendFunc = (which, array) =>{
-    //     array.sort((a, b) => {
-    //         if (a.rating > b.rating) {
-    //             return -1
-    //         }
-    //         if (b.rating > a.rating) {
-    //             return 1
-    //         }
-    //         return 0;
-    //     });
-    //     return which ? array : array.reverse()
-    // }
+    const isRankUpFunc = (which) =>{
+        mentors.sort((a, b) =>{
+            return which ? a.rating > b.rating : a.rating < b.rating
+        })
+    }
 
-    // useEffect(() =>{
-    //     alphaAscendFunc(filter.alphaAscend, mentors)
-        
-    // }, [filter])
+    isAlphUpFunc(filter.alphaAscend)
+    isRankUpFunc(filter.rankAscend)
+    
 
     const filters = { //this will be an object that stores all of the functionality
         isAlphUp: () => setFilter({...filter, alphaAscend: !filter.alphaAscend}),
