@@ -52,8 +52,6 @@ const Mentor = () => {
         
     }, [filter])
 
-    console.log(`alphaAscend: ${filter.alphaAscend}`)
-
     const filters = { //this will be an object that stores all of the functionality
         isAlphUp: () => setFilter({...filter, alphaAscend: !filter.alphaAscend}),
         isRankUp: () => setFilter({...filter, rankAscend: !filter.rankAscend})

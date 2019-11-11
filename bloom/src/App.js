@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <div className="container">
       <Route path="/" exact component={Home} />
-      <Route path="/Mentor" exact component={Mentor}/>
+      <Route path="/mentors" exact component={Mentor}/>
       {/* <Route path="/" />
       <Route path="/" /> */}
       </div>

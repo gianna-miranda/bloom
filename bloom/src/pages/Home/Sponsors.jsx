@@ -1,4 +1,6 @@
 import React from 'react'
+import Lyft from './images/lyft.png'
+import cms from './images/CMS.png'
 
 
 const box = (name, img, info, height, width) =>(
@@ -25,7 +27,7 @@ const Sponsors = () =>{
 
     const lyft = new Sponsor(
         "Lyft",
-        "https://www.nstreetvillage.org/wp-content/uploads/2016/11/lyft-logo-png-transparent-705x517.png",
+        Lyft,
         `Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Lorem ipsum dolor sit amet consectetur adipisicing elit
         `,
@@ -35,7 +37,7 @@ const Sponsors = () =>{
 
     const CMS = new Sponsor(
         "CMS",
-        "https://upload.wikimedia.org/wikipedia/en/d/d5/Charmeckschoolslogo.png",
+        cms,
         `Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Lorem ipsum dolor sit amet consectetur adipisicing elit
         `,

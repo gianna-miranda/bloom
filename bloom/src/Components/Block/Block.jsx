@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Popup from '../Popup/Popup'
 import Stars from './Stars'
+import DefaultAvatar from './images/DefaultAvatar.png'
 import './block.scss'
 
 const Block = props =>{
@@ -19,7 +20,7 @@ const Block = props =>{
         <>
             <div key={_id} className="block" onClick={ () => setPopup(true) }>
                 <div className="block-pic">
-                    <img src="https://icon-icons.com/icons2/1997/PNG/48/account_avatar_people_profile_user_icon_123297.png" alt="profile-pic"/>
+                    <img src={DefaultAvatar} alt="profile-pic"/>
                 </div>
                 <div className="block-info">
                     <p>{`${firstName} ${lastName}`}</p>
