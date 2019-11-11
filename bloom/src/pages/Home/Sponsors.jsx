@@ -25,7 +25,7 @@ const Sponsors = () =>{
         sponsorList.push(this)
     }
 
-    const lyft = new Sponsor(
+    new Sponsor(
         "Lyft",
         Lyft,
         `Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -35,7 +35,7 @@ const Sponsors = () =>{
         "4em"
     )
 
-    const CMS = new Sponsor(
+    new Sponsor(
         "CMS",
         cms,
         `Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -45,15 +45,6 @@ const Sponsors = () =>{
         "8em"
     )
 
-    // const Dress = new Sponsor(
-    //     "Dress",
-    //     "#",
-    //     `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    //         Lorem ipsum dolor sit amet consectetur adipisicing elit
-    //     `
-    // )
-    
-    
     return(
         <div id="sponsors">
             <div className="header">

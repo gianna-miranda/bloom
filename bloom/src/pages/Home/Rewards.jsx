@@ -26,7 +26,7 @@ const Rewards = () =>{
         rewardsList.push(this)
     }
 
-    const tickets = new Reward(
+    new Reward(
         "Tickets", 
         Ticket, 
         "You can get free tickets to sporting events, movies, etc.",
@@ -34,7 +34,7 @@ const Rewards = () =>{
         "3em"
     )
 
-    const money = new Reward(
+    new Reward(
         "Money",
         Money,
         "You can recieve real cash",
@@ -42,14 +42,14 @@ const Rewards = () =>{
         ""
     )
 
-    const giftCards = new Reward(
+    new Reward(
         "Gift Card",
         GiftCard,
         "Recieve gift cards to place like Dominoes and Star Bucks",
         "3em",
         ""
     )
-    const thing = [giftCards,money,tickets]
+    
     return(
         <div id="rewards">
             <div className="header">

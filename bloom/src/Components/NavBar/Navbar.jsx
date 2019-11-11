@@ -10,8 +10,8 @@ const Navbar = () =>{
             <div className="pages">
                 <a href="/"><p>Home</p></a>
                 <a href="/mentors"><p>Mentors</p></a>
-                <a href=""><p>Networking</p></a>
-                <a href=""><p>About</p></a>
+                <a href="/network"><p>Networking</p></a>
+                <a href="/about"><p>About</p></a>
             </div>
         </nav>
     )
