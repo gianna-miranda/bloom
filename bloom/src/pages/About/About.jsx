@@ -1,26 +1,13 @@
 import React from 'react'
+import Team from './Team'
+import Founders from './Founders'
 import './about.scss'
 
-const About = () =>{
-    const people = []
-    function Person(name, about, image){
-        this.name = name
-        this.about = about
-        this.image = image
-        people.push(this)
-    }
-    return(
+const About = () =>(
         <div id="about">
-            <div className="title">
-                <h1 className="title-text">About US</h1>
-            </div>
-            <div className="title">
-                <h1 className="title-text">Founders</h1>
-            </div>
-            
-            
+            <Team />
+            <Founders />  
         </div>
-    )
-}
+)
 
 export default About

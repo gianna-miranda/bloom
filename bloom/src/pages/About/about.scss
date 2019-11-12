@@ -2,4 +2,15 @@
 
 #about{
     text-align: center;
+    margin: auto 2em;
+    color: $secondary;
+    .title{
+        font-size: 3em;
+        text-decoration: underline;
+    }
+    p{
+        color: black;
+        text-align: justify;
+        font-size: 1.4em;
+    }
 }
