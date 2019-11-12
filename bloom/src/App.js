@@ -5,8 +5,8 @@ import "./main.scss";
 import Navbar from "./Components/NavBar/Navbar"
 import Home from "./pages/Home/Home"
 import Mentor from "./pages/Mentor/Mentor"
+import About from "./pages/About/About"
 import NotFound from "./pages/NotFound/NotFound"
-
 
 function App() {
   return (
@@ -16,11 +16,10 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/mentors" exact component={Mentor}/>
+        <Route path="/about" exact component={About}/>
         <Route path="/404" component={NotFound}/>
         <Redirect to="/404" />
       </Switch>
-      {/* <Route path="/" />
-      <Route path="/" /> */}
       </div>
     </Router>
   );
