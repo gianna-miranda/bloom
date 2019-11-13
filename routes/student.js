@@ -7,7 +7,6 @@ router.get('/', (req, res) =>{
         if(err){
             console.log("Was not able to retreive all mentors")
         } else {
-            console.log(doc)
             res.send(doc)
         }
     })

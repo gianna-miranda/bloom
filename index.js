@@ -9,7 +9,7 @@ const app = express()
 app.use(cors())
 
 // note with heroku deployment you must source port from env
-const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 5006;
 
 // register middleware component
 app.use(logger("dev"));

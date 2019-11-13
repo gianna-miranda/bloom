@@ -1,6 +1,6 @@
-import React from 'react'
+ import React from 'react'
 
-const signUpPop = (props) =>{
+const signUpPop = props =>{
     const {
         handleChange, 
         handleSubmit, 

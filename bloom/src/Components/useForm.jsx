@@ -10,6 +10,7 @@ const UseForm = (callback, validate) => {
     description: "",
     tag: "",
     gradeLevel: "",
+    password: "",
     gpa: Number
   })
 
