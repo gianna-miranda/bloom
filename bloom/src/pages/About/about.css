@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  margin: 3em auto;
+}
+
+#about {
+  text-align: center;
+  margin: auto 2em;
+  color: orangered;
+}
+
+#about .title {
+  font-size: 3em;
+  text-decoration: underline;
+}
+
+#about p {
+  color: black;
+  text-align: justify;
+  font-size: 1.4em;
+}
+
+#founders .display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#founders .display .founder {
+  margin: auto 1em;
+}
+
+#founders .display .founder-img img {
+  border-radius: 100%;
+}
+
+#founders .display .founder-name {
+  font-size: 2.5em;
+}
+/*# sourceMappingURL=about.css.map */
