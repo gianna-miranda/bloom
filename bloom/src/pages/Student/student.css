@@ -13,18 +13,29 @@ a {
   color: inherit;
 }
 
-.filters {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border: 1px black solid;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+.Title {
+  font-size: 1.5em;
   text-align: center;
 }
 
-.filters-filter {
-  -webkit-transition: 1s ease transform;
-  transition: 1s ease transform;
+#filter {
+  margin: 1em 20%;
+  font-size: 1.2em;
 }
-/*# sourceMappingURL=filter.css.map */
+
+#students {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (min-width: 450px) {
+  .Title {
+    font-size: 2em;
+  }
+}
+/*# sourceMappingURL=student.css.map */
