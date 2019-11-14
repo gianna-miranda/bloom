@@ -1,4 +1,7 @@
 import React from 'react'
+import Ticket from './images/ticket.png'
+import Money from './images/money.png'
+import GiftCard from './images/giftcard.png'
 
 const box = (name, img, info, height, width) =>(
     <div className="box" key={name}>
@@ -23,30 +26,30 @@ const Rewards = () =>{
         rewardsList.push(this)
     }
 
-    const tickets = new Reward(
+    new Reward(
         "Tickets", 
-        "https://icon-icons.com/icons2/1633/PNG/72/52721admissiontickets_109380.png", 
+        Ticket, 
         "You can get free tickets to sporting events, movies, etc.",
         "",
         "3em"
     )
 
-    const money = new Reward(
+    new Reward(
         "Money",
-        "https://icon-icons.com/icons2/650/PNG/72/Banking_00003_A_icon-icons.com_59828.png",
+        Money,
         "You can recieve real cash",
         "3em",
         ""
     )
 
-    const giftCards = new Reward(
+    new Reward(
         "Gift Card",
-        "https://icon-icons.com/icons2/1577/PNG/72/3615756-card-coupon-discount-gift-label-offer-voucher_107904.png",
+        GiftCard,
         "Recieve gift cards to place like Dominoes and Star Bucks",
         "3em",
         ""
     )
-    const thing = [giftCards,money,tickets]
+    
     return(
         <div id="rewards">
             <div className="header">

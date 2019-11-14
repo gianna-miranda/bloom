@@ -8,6 +8,7 @@ import Rewards from './Rewards'
 import SignUp from '../../Components/SignUp/SignUp'
 import Popup from '../../Components/Popup/Popup'
 import SignPopUp from '../../Components/Popup/SignUp'
+import LoginPopUp from '../../Components/Popup/Login'
 import './home.scss'
 
 const Home = () =>{
@@ -17,6 +18,7 @@ const Home = () =>{
     const [ popupSignUp, setPopupSignUp ] = useState(false)
     const [ popupLogin, setPopupLogin ] = useState(false)
     const [ isSignUp, setIsSignUp ] = useState(Boolean)
+    const [ user, setUser ] = useState({})
 
     const signupType = (type) =>{
         if(type === "bloomer"){
@@ -47,25 +49,48 @@ const Home = () =>{
     }
     
     const login = () =>{
-        console.log("login submition")
+        const { 
+            email, 
+            password, 
+        } = values
+        const pack = { 
+            email, 
+            password: password, 
+            type: "" 
+        }
+        if(isMentor === "active"){
+            console.log("logging in")
+            pack.type = "mentor"
+            axios.post('/login', pack)
+                .then(res => setUser(res.data))
+                .catch(() => console.log("was not able to retieve a mentor"))
+        } else if(isBloomer === "active"){
+            axios.post('/login', pack)
+                console.log("logging in")
+                pack.type = "bloomer"
+                axios.post('/login', pack)
+                    .then(res => setUser(res.data))
+                    .catch(() => console.log("was not able to retieve a mentor"))
+        } else{
+            console.log("Are you a Mentor or Bloomer?")
+        }
+        setPopupLogin(false)
+    }
+    let submit
+
+    if(isSignUp){
+        submit = signUp
+    }
+    if(!isSignUp){
+        submit = login
     }
 
-    let submit = isSignUp ? signUp : login
-
     const { handleChange, handleSubmit, values, errors } = UseForm(submit, validator)
-
-    const loginPop = () =>(
-        <form>
-            <div>
-                
-            </div>
-        </form>
-    )
 
     const addTag = () =>{
         setTags([...tags, values.tag])
     }
-
+    console.log(user)
     return(
         <div>
             <Hero />
@@ -86,7 +111,15 @@ const Home = () =>{
                 />
             </Popup>
             <Popup isOn={ popupLogin } clicked={ () => {setPopupLogin(!popupLogin); setIsSignUp(false)} } header="Login">
-                {loginPop()}
+                <LoginPopUp 
+                    handleChange={ handleChange }
+                    handleSubmit={ handleSubmit }
+                    values={values}
+                    errors={errors}
+                    isBloomer={isBloomer}
+                    isMentor={isMentor}
+                    signupType={signupType}
+                />
             </Popup>
         </div>
     )
