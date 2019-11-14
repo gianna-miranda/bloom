@@ -13,7 +13,7 @@ const Mentor = () => {
     })
 
     useEffect(() =>{
-        Axios.get('/Mentor')
+        Axios.get('/mentor')
             .then(res => setMentors(res.data))
             .catch(err => console.error(err))
     }, [])

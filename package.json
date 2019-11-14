@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "nodemon index.js",
+    "start:prod": "node index.js",
     "start:dev": "concurrently \"nodemon index.js --ignore 'client/*'\" \"npm run client\"",
     "client": "cd bloom && npm run start",
     "install": "cd bloom && npm install",
