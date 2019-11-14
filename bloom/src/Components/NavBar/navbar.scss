@@ -9,11 +9,27 @@ nav{
     flex-direction: column;
     header{
         line-height: 3em;
+        img{
+            height: 5em;
+        }
+        h1{
+            font-size: 4em;
+                &::before{
+                    content: url("https://icon-icons.com/icons2/624/PNG/48/Spring-80_icon-icons.com_57269.png");
+                    font-size: 1em;
+                }
+                &::after{
+                    content: url("https://icon-icons.com/icons2/624/PNG/48/Spring-80_icon-icons.com_57269.png")
+                }
+        }
     }
     .pages{
         display: flex;
         justify-content: space-between;
         line-height: 3em;
+        a:hover{
+            background-color: blue;
+        }
         p{
             margin: 0px;
             // border: 1px black solid;
