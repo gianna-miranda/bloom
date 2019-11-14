@@ -1,0 +1,9 @@
+@import '../../Components/cssUtils.scss';
+
+.filters{
+    text-align: center;
+    margin-bottom: 1em;
+    &-filter{
+        transition: 1s ease transform;
+    }
+}

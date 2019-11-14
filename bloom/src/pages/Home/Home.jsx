@@ -57,7 +57,7 @@ const Home = () =>{
     const loginPop = () =>(
         <form>
             <div>
-                something
+                
             </div>
         </form>
     )
@@ -75,7 +75,7 @@ const Home = () =>{
             <Popup isOn={ popupSignUp } clicked={ () => {setPopupSignUp(!popupSignUp)} } header="Sign Up">
                 <SignPopUp
                     handleChange={ handleChange }
-                    handleSubmit={handleSubmit}
+                    handleSubmit={ handleSubmit }
                     values={values}
                     errors={errors}
                     tags={tags}
