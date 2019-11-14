@@ -1,29 +1,30 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react'
 import Filter from '../../Components/Filter/Filter'
 import Block from '../../Components/Block/Block'
-// import Popup from '../../Components/Popup/Popup';
-import Axios from 'axios';
-import './Mentor.scss'
+import Axios from 'axios'
+import './student.scss'
 
-const Mentor = () => {
-    const [ mentors, setMentors ] = useState([])
+
+
+const Student = () =>{
+    const [ students, setStudents ] = useState([])
     const [ filter, setFilter ] = useState({
         alphaAscend: true,
         rankAscend: true
     })
 
     useEffect(() =>{
-        Axios.get('/mentor')
-            .then(res => setMentors(res.data))
-            .catch(err => console.error(err))
+        Axios.get('/student')
+            .then(res => setStudents(res.data))
+            .catch(() => console.log("Unable to retieve students"))
     }, [])
 
-    mentors.sort((a, b) => {// filtering alphabetically
+    students.sort((a, b) => {// filtering alphabetically
         return (`${a.firstName}${a.lastName}` > `${b.firstName}${b.lastName}`) ? 1 : -1
     })
-    filter.alphaAscend || mentors.reverse()
+    filter.alphaAscend || students.reverse()
 
-    mentors.sort((a, b) =>{// filtering by rating
+    students.sort((a, b) =>{// filtering by rating
         return filter.rankAscend ? a.rating > b.rating : a.rating < b.rating
     })
     
@@ -33,19 +34,19 @@ const Mentor = () => {
         isRankUp: () => setFilter({...filter, rankAscend: !filter.rankAscend})
     }
 
-    return (
-        <>
+    return(
+        <main>
             <div className="Title">
-                <h1 className="Title-text">Mentors</h1>
+                <h1 className="Title-text">Students</h1>
             </div>
             <div id="filter">
                 <Filter  functions={filters} switch={filter}/>
             </div>
-            <div id="mentors">
-                { mentors.map(mentor => <Block key={mentor._id} group={mentor}/>) }
+            <div id="students">
+                { students.map(student => <Block key={student._id} group={student}/>) }
             </div>
-        </>
-    ); 
-};
+        </main>
+    )
+}
 
-export default Mentor;
+export default Student
