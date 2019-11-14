@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require("express");
 const logger = require("morgan");
-const path = require("path");
+// const path = require("path");
 const mongoose = require('mongoose')
 const cors = require('cors')
 
@@ -15,7 +15,14 @@ const PORT = process.env.PORT || 5006;
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+// app.use(express.static("public"))
+
+// if(process.env.NODE_ENV === "production"){
+//     app.use(express.static("bloom/build"));
+//  }
+//  app.get("*", (req, res) =>{
+//     res.sendFile(path.join(__dirname, "./bloom/build/index.html"))
+//  })
 
 // Serve up static assets (heroku)
 // Connect to Atlas in production
@@ -29,7 +36,6 @@ client = mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUni
     console.log("Connected successfully to server") 
 });
 
-
 ////////////////////////
 ///   api end points //
 //////////////////////
@@ -42,8 +48,6 @@ app.use('/mentor', mentorRouter)
 app.use('/student', studentRouter)
 app.use('/login', loginRouter)
 
-
-
-
-
 app.listen(PORT, () => { console.log(`listening on port ${PORT}`) })
+
+
