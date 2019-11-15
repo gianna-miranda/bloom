@@ -11,9 +11,6 @@ const Login = props =>{
         signupType
     } = props
     
-    values.firstName = "default"
-    values.lastName = "default"
-    values.phoneNumber = "000000000"
     return(
         <form id="form-signup" onSubmit={ handleSubmit } noValidate>
             <label htmlFor="Name">Email:</label>

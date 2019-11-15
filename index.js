@@ -17,12 +17,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // app.use(express.static("public"))
 
-if(process.env.NODE_ENV === "production"){
-    app.use(express.static("bloom/build"));
- }
- app.get("*", (req, res) =>{
-    res.sendFile(path.join(__dirname, "./bloom/build/index.html"))
- })
+// if(process.env.NODE_ENV === "production"){
+//     app.use(express.static("bloom/build"));
+//  }
+//  app.get("*", (req, res) =>{
+//     res.sendFile(path.join(__dirname, "./bloom/build/index.html"))
+//  })
 
 // Serve up static assets (heroku)
 // Connect to Atlas in production

@@ -90,7 +90,7 @@ const Home = () =>{
     const addTag = () =>{
         setTags([...tags, values.tag])
     }
-    console.log(user)
+    console.log(values)
     return(
         <div>
             <Hero />
