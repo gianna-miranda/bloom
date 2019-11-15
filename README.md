@@ -2,6 +2,8 @@
 ## Solving Charlotte's economic mobility crisis
 ## Youtube Video
 https://www.youtube.com/watch?v=pGKzyE9HDs8&feature=youtu.be
+## Proposal Link
+https://docs.google.com/document/d/1iloW0rJwEQF3OoFRFWwQUWt8Saq1zdf7xrbt0QKTOhM/edit?usp=sharing
 
     
 
