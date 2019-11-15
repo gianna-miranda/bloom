@@ -1,22 +1,20 @@
 # Bloom
 ## Solving Charlotte's economic mobility crisis
-## App On Heroku
+## Youtube Video
+https://www.youtube.com/watch?v=pGKzyE9HDs8&feature=youtu.be
 
-    $ https://lifesportshackathon.herokuapp.com/
+    
 
 
-# LifeSports Hackathon App
+# FIX50 Hackathon App
 
-An database administration website built in react using API's to connect to a Mongo database.
+Competitive submissions will explain the problem, identify a solution, and provide measurable outcomes. Use your video and written submission to convince the judges that you have the right idea and the right team to create a lasting, positive impact on the Charlotte community. Submissions with more mature and developed proposals will be given favorable consideration, meaning having a product developed, a proof of concept, or something created will increase your chances of success. 
 
 ## Requirements
 
-You need git to clone the repository. You can get git from http://git-scm.com/.
-
-A number of node.js tools are necessary to initialize and test the project. You must have node.js and its package manager `npm` installed. You can get them from http://nodejs.org/. The tools/modules used in this project are listed in package.json and include: 
-* Express, 
-* MongoDB
-* Mongoose
+Idea — Is this a new concept? Are there already ongoing projects addressing your proposal?
+Impact — Think ROI. If chosen, what are you expected results? How will you use the opportunity to create a tangible difference.
+Maturity — How sophisticated is your proposal? Is it just an idea? Is it fully developed and ready to go?
 
 For development, you will only need Node.js and a node global package `Yarn` installed in your environement.
 
@@ -52,15 +50,6 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ npm install npm -g
 
-###
-
-### Yarn installation
-
-After installing node, this project will need yarn too, so just run the following command.
-
-      $ npm install -g yarn
-
----
 
 ### Start the MongoDB server
 
@@ -69,16 +58,16 @@ First we need to create the `db` directory where the database files will live in
 ## Install
 
     $ git clone https://github.com/gianna-miranda/bloom.git
-    $ cd LifeSportsApp
-    $ yarn install
+    $ cd bloom
+    $ npm install || npm i 
 
 ## Running the project
 
-    $ yarn start
+    $ npm run start
 
 ## Simple build for production
 
-    $ yarn build
+    $ npm build
     
 ## Authors
 
