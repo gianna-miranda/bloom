@@ -1,0 +1,205 @@
+@import '../../Components/cssUtils.scss';
+
+/* start of hero */
+#hero{
+    .img-container{
+        background-image: url("https://media.istockphoto.com/photos/portrait-of-high-school-students-with-teacher-on-campus-picture-id499113171?k=6&m=499113171&s=612x612&w=0&h=fNTPjIVZwpt6TuhdfCVX7u2FTixSzYnXRigEfbZNsnQ=");
+        height: 100vh;
+        width: 100vw;
+        background: {
+            repeat: no-repeat;
+            position: center;
+            size: cover;
+            attachment: fixed;
+        }
+        position: relative;
+        &-inner{
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 50%;
+            font-size: 1.41em;
+            color: $secondary;
+            height: 7em;
+            background-color: $primary;
+        }
+    }
+}
+.title{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.subhead{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+/* end of hero */
+
+/* start of Sponsors */
+#sponsors{
+    text-align: center;
+    .container{
+        display: flex;
+        flex-direction: column;
+        .box{
+            border: 3px solid $primary;
+            margin: 5em;
+            width: 200px;
+            margin: 10px auto;
+            &-name{
+                height: 3em;
+                border-bottom: 3px solid $primary;
+                padding: .5em 3em;
+            }
+            &-info{
+                padding: 0px 0px;
+            }
+        }
+    }
+}
+/* end of Sponsors */
+
+/* start of Rewards */
+#rewards{
+    text-align: center;
+    .container{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        .box{
+            border: 3px solid $primary;
+            background-color: rgb(238, 238, 238);
+            margin-bottom: 1em;
+            width: 8em;
+            // &-name{
+            //     // border-bottom: 3px solid $primary;
+            // }
+        }
+    }
+}
+/* end of Rewards */
+
+@media screen and (min-width: 600px){
+    /* start of all headers */
+    .header{
+        font-size: 2em;
+        margin-bottom: 2em
+    }
+    /* end of all headers */
+
+    /* start of hero */
+    #hero{
+        .img-container{
+            &-inner{
+                font-size: 2.5em;
+            }
+        }
+    }
+    /* end of hero */
+
+    /* start of Sponsors */
+    #sponsors{
+        .container{
+            flex-direction: row;
+            flex-wrap: wrap;
+            .box{
+                margin: 10px auto;
+                padding: 0px 0px;
+                font-size: 1rem;
+                height: 17em;
+                &-info{
+                    text-align: justify;
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+    /* end of Sponsors */
+
+    /* start of Rewards */
+    #rewards{
+        text-align: center;
+        .container{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            .box{
+                border: 3px solid $primary;
+                margin-bottom: 1em;
+                width: 20em;
+                font-size: 26px;
+                padding: 1em;
+                // &-name{
+                //     // border-bottom: 3px solid $primary;
+                // }
+            }
+        }
+    }
+    /* end of Rewards */
+}
+
+@media screen and (min-width: 700px){
+    /* start of hero */
+    #hero{
+        .img-container{
+            &-inner{
+                font-size: 2.9em;
+            }
+        }
+    }
+    /* end of hero */
+}
+
+@media screen and (min-width: 900px){
+    /* start of hero */
+    #hero{
+        .img-container{
+            position: relative;
+            &-inner{
+                font-size: 4em;
+            }
+        }
+    }
+    /* end of hero */
+
+    /* start of Sponsors */
+    #sponsors{
+        .container{
+            flex-direction: column;
+            .box{
+                width: auto;
+                display: flex;
+                justify-content: space-evenly;
+                border: none;
+                img{
+                    width: 12em !important;
+                    padding: initial;
+                }
+                &-name{
+                    height: auto;
+                    border-bottom: none;
+                    border-right: gray solid 1px;
+                }
+                &-info{
+                    width: 50%;
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+    /* end of Sponsors */
+}
+
+@media screen and (min-width: 1100px){
+    /* start of hero */
+    #hero{
+        .img-container{
+            position: relative;
+            &-inner{
+                font-size: 5em;
+            }
+        }
+    }
+    /* end of hero */
+}

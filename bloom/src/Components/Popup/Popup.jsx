@@ -6,7 +6,9 @@ const Popup = (props) =>{
     return (
         <div className="Popup" style={{display: `${isOn ? 'block' : 'none'}`}}>
             <div className="Popup_exit" onClick={ clicked }><span>x</span></div>
-            <div className="Popup-type"><h2>{header}</h2></div>
+            <div className="Popup-type">
+                <h2>{header}</h2>
+            </div>
             {props.children}
         </div>
     )

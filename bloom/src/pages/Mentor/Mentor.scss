@@ -1,0 +1,23 @@
+@import '../../Components/cssUtils.scss';
+
+.Title{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#filter{
+    margin: 1em 20%;
+    font-size: 1.2em;
+}
+
+#mentors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 450px){
+    .Title{
+        font-size: 2em;
+    }
+}

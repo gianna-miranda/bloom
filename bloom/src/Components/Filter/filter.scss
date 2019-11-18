@@ -1,0 +1,11 @@
+@import '../../Components/cssUtils.scss';
+
+.filters{
+    display: flex;
+    border: 1px black solid;
+    justify-content: space-around;
+    text-align: center;
+    &-filter{
+        transition: 1s ease transform;
+    }
+}

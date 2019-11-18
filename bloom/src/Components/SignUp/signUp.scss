@@ -1,0 +1,87 @@
+@import '../../Components/cssUtils.scss';
+
+/* loginbtn start */
+#loginbtn{
+    position: absolute;
+    font-size: 2em;
+    width: 3.5em;
+    background-color: $primary;
+    color: $secondary;
+    left: 0;
+    top: 18%;
+    border-bottom-right-radius: 49% 96%;
+    border-top-right-radius: 49% 96%;
+    padding: 12px 15px;
+    padding-right: 0px;
+    padding-left: 1em;
+    transition: ease all 1s;
+    &:hover{
+        background-color: #fff;
+        text-decoration: underline;
+        cursor: pointer;
+        width: 4em;
+    }
+}
+/* loginbtn end */
+
+/* signupbttn start */
+#signUpbtn{
+    position: absolute;
+    font-size: 2em;
+    width: 3.5em;
+    background-color: $primary;
+    color: $secondary;
+    right: 0;
+    top: 18%;
+    border-bottom-left-radius: 49% 96%;
+    border-top-left-radius: 49% 96%;
+    padding: 12px 15px;
+    padding-right: 0px;
+    padding-left: 1em;
+    transition: ease all 1s;
+    &:hover{
+        background-color: #fff;
+        text-decoration: underline;
+        cursor: pointer;
+        width: 4.5em;
+    }
+}
+/* signupbtn end */
+
+@media screen and (min-width: 450px){
+    #loginbtn{
+        position: fixed;
+        left: initial;
+        right: 0;
+        top: 7%;
+        border-bottom-left-radius: 49% 96%;
+        border-top-left-radius: 49% 96%;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+    #signUpbtn{
+        position: fixed;
+        top: 14%;
+    }
+}
+
+@media screen and (min-width: 600px){
+    #signUpbtn{
+        font-size: 2em;
+        width: 4em;
+        background-color: $primary;
+        color: $secondary;
+        right: 0;
+        top: 15%;
+        border-bottom-left-radius: 49% 96%;
+        border-top-left-radius: 49% 96%;
+        padding: 12px 15px;
+        padding-right: 0px;
+        padding-left: 40px;
+        &:hover{
+            background-color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}

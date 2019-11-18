@@ -1,0 +1,37 @@
+@import '../cssUtils.scss';
+
+.block{
+    display: flex;
+    width: 17rem;
+    border: 2px $primary solid;
+    padding: .5em; 
+    margin-bottom: 1em;
+    &-Popup{
+        text-align: center;
+    }
+}
+
+.stars{
+    display: flex;
+    &-centered{
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 360px){
+    .block{
+        width: 19rem
+    }
+}
+
+@media screen and (min-width: 400px){
+    .block{
+        width: 21rem;
+    }
+}
+
+@media screen and (min-width: 500px){
+    .block{
+        width: 21rem;
+    }
+}

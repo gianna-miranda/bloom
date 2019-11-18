@@ -1,0 +1,39 @@
+@import '../../Components/cssUtils.scss';
+
+section{
+    margin: 3em auto;
+}
+
+#about{
+    text-align: center;
+    margin: auto 2em;
+    color: $secondary;
+    .title{
+        font-size: 3em;
+        text-decoration: underline;
+    }
+    p{
+        color: black;
+        text-align: justify;
+        font-size: 1.4em;
+    }
+}
+
+#founders{
+    .display{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .founder{
+            margin: auto 1em;
+            &-img{
+                img{
+                    border-radius: 100%;
+                }
+            }
+            &-name{
+                font-size: 2.5em;
+            }
+        }
+    }
+}
